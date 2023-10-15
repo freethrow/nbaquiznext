@@ -6,8 +6,8 @@ export default function Home() {
   const { userId } = auth();
 
   return (
-    <div className=" flex flex-col justify-center items-end border-4 h-full">
-      <div className="hero bg-base-200  rounded-lg">
+    <div className="h-full">
+      <div className="hero bg-base-200  rounded m-3 p-2">
         <div className="hero-content flex-col lg:flex-row">
           <Image
             src="/imageedit_1_4973738336.jpg"
@@ -16,7 +16,9 @@ export default function Home() {
             height={1280}
           />
           <div>
-            <h1 className="text-5xl font-bold">Play basketball stats!</h1>
+            <h1 className="md:text-5xl text-2xl font-bold">
+              Play basketball stats!
+            </h1>
             <p className="py-6">
               It's pretty simple: you get an amount of time and a statline
               together with five players. Your task is to guess / identify which
