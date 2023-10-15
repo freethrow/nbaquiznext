@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="navbar bg-base-200 h-20">
       <div className="flex-1">
-        <Link href="/" className=" font-black text-4xl">
+        <Link href="/" className=" font-black text-2xl">
           Basketball Quiz
         </Link>
       </div>
@@ -35,9 +35,8 @@ const Header = () => {
               <Link href="/play" className="btn btn-neutral btn-active mx-3">
                 Play
               </Link>
-              <div className="bg-gray-800 rounded-md mx-3">
-                <SignOutButton />
-              </div>
+
+              <SignOutButton />
             </>
           )}
         </div>

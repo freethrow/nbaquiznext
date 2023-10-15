@@ -7,7 +7,12 @@ const SignOutButton = () => {
   const router = useRouter();
 
   return (
-    <button onClick={() => signOut(() => router.push("/"))}>Sign out</button>
+    <button
+      className="btn btn-neutral btn-active mx-3"
+      onClick={() => signOut(() => router.push("/"))}
+    >
+      Sign out
+    </button>
   );
 };
 
