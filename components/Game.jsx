@@ -119,7 +119,7 @@ const Game = () => {
   const numQuestions = questions.length;
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/players/5`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/players/10`)
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed" }));
