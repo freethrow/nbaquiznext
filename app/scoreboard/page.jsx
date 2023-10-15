@@ -1,3 +1,6 @@
+import { auth } from "@clerk/nextjs";
+import { useId } from "react";
+
 async function getAllUSersData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`, {
     cache: "no-store",
@@ -13,6 +16,7 @@ async function getAllUSersData() {
 
 const ScoreBoard = async () => {
   const users = await getAllUSersData();
+  const { userId } = auth();
   return (
     <div className="flex flex-col justify-center items-center mx-auto h-full min-w-full">
       <h1>ScoreBoard</h1>
@@ -33,13 +37,18 @@ const ScoreBoard = async () => {
             {/* row 1 */}
             {users.map((user, index) => {
               return (
-                <tr>
+                <tr
+                  key={user.useId}
+                  className={
+                    user.user_id == userId ? "bg-red-700 rounded-lg" : ""
+                  }
+                >
                   <th>{index + 1}</th>
                   <td>{user.username}</td>
                   <td>{user.played}</td>
                   <td>
                     {user.played ? (
-                      user.score / user.played
+                      (user.score / user.played).toFixed(1)
                     ) : (
                       <>Not played yet</>
                     )}
