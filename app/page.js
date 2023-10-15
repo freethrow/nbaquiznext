@@ -25,7 +25,7 @@ export default function Home() {
               player had the given statline in the last NBA season. You can ask
               for help, and 3 point will be deducted from your total score. Once
               the time runs out, your score will be recorded.
-              <br /> Have fun!
+              <br /> Have fun and <strong>don't forget to click Finish!</strong>
             </p>
             <Link className="btn btn-primary" href="/play">
               Get Started
