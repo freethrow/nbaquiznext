@@ -13,7 +13,7 @@ const NextButton = ({ dispatch, answer, index, numQuestions }) => {
   if (index < numQuestions - 1) {
     return (
       <button
-        className=" btn btn-accent"
+        className=" btn btn-secondary btn-lg m-2"
         onClick={() => {
           dispatch({ type: "nextQuestion" });
         }}

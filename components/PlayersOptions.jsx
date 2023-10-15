@@ -5,7 +5,7 @@ const PlayersOptions = ({ player, dispatch, answer }) => {
   }
 
   return (
-    <div className="grid grid-cols-5 w-3/4 mx-auto">
+    <div className="grid grid-cols-5 w-3/4 mx-auto my-5">
       {player.choices.map((option, index) => (
         <button
           className={`btn btn-success mx-2 ${

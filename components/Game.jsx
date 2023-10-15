@@ -10,6 +10,7 @@ import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
 import Timer from "./Timer";
 import GameInfo from "./GameInfo";
+import Loading from "./Loading";
 
 const SECS_PER_QUESTION = 15;
 
@@ -125,10 +126,10 @@ const Game = () => {
   }, [gamesPlayed]);
 
   return (
-    <div className=" min-w-full h-full mx-7">
+    <div className="h-full shadow-xl">
       <GameInfo points={points} />
 
-      {status === "loading" && <div>Loading...</div>}
+      {status === "loading" && <Loading />}
       {status === "ready" && (
         <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
       )}
@@ -152,6 +153,7 @@ const Game = () => {
             dispatch={dispatch}
             setGamesPlayed={setGamesPlayed}
             gamesPlayed={gamesPlayed}
+            length={questions.length}
           />
         </>
       )}

@@ -25,11 +25,13 @@ export default function RootLayout({ children }) {
         baseTheme: dark,
       }}
     >
-      <html lang="en" data-theme="lemonade" className={fredoka.className}>
+      <html lang="en" data-theme="dracula" className={fredoka.className}>
         <body>
-          <div className="min-h-screen flex flex-col items-stretch bg-base-200">
+          <div className="min-h-screen flex flex-col items-center justify-center bg-base-200">
             <Header />
-            <div className="flex-1 mx-auto w-full min-h-full">{children}</div>
+            <div className="flex-1 mx-auto w-full h-[calc(100vh-98px)] flex flex-col justify-center items-center ">
+              {children}
+            </div>
             <Footer />
           </div>
         </body>
