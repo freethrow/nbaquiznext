@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { auth, UserButton } from "@clerk/nextjs";
+import SignOutButton from "./SignOutButton";
 
 const Header = () => {
   const { userId } = auth();
@@ -12,29 +13,20 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
+        <div className="menu menu-horizontal px-1">
           <Link className="btn btn-neutral btn-active mx-3" href="/scoreboard">
             Scoreboard
           </Link>
 
           {!userId && (
             <>
-              <li>
-                <Link
-                  className="btn btn-neutral btn-active mx-3"
-                  href="/sign-up"
-                >
-                  Sign Up
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="btn btn-neutral btn-active mx-3"
-                  href="/sign-in"
-                >
-                  Sign In
-                </Link>
-              </li>
+              <Link className="btn btn-neutral btn-active mx-3" href="/sign-up">
+                Sign Up
+              </Link>
+
+              <Link className="btn btn-neutral btn-active mx-3" href="/sign-in">
+                Sign In
+              </Link>
             </>
           )}
 
@@ -43,12 +35,12 @@ const Header = () => {
               <Link href="/play" className="btn btn-neutral btn-active mx-3">
                 Play
               </Link>
-              <div className=" p-2 bg-gray-800 rounded-md mx-3">
-                <UserButton showName={true} />
+              <div className="bg-gray-800 rounded-md mx-3">
+                <SignOutButton />
               </div>
             </>
           )}
-        </ul>
+        </div>
       </div>
     </div>
   );
